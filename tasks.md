@@ -11,11 +11,11 @@
 - [x] Generate & Translate Screen 4: First Lesson Preview (Coach Marks).
 
 ## Phase 2: Core Learning Flow
-- [ ] Generate & Translate Screen 5: Volume Selection (Iqra' 1-6).
-- [ ] Generate & Translate Screen 6: Lesson Screen.
-- [ ] Generate & Translate Screen 7: AI Feedback Overlay.
-- [ ] Generate & Translate Screen 8: Lesson Complete Celebration.
-- [ ] Generate & Translate Screen 9: Home Dashboard (Child View).
+- [x] Generate & Translate Screen 5: Volume Selection (Iqra' 1-6).
+- [x] Generate & Translate Screen 6: Lesson Screen.
+- [x] Generate & Translate Screen 7: AI Feedback Overlay.
+- [x] Generate & Translate Screen 8: Lesson Complete Celebration.
+- [x] Generate & Translate Screen 9: Home Dashboard (Child View).
 
 ## Phase 3: Parent Dashboard
 - [ ] Generate & Translate Screen 10: Parent Overview Dashboard.

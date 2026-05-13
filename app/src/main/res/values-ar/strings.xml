@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">IqraAI</string>
+
+    <!-- المرحلة 2: اختيار المجلد -->
+    <string name="phase2_volume_title">اختر مجلد إقراء</string>
+    <string name="phase2_volume_subtitle">اختر مجلدًا لمتابعة رحلة تعلم القراءة القرآنية.</string>
+    <string name="phase2_volume_title_item">إقراء %1$d</string>
+    <string name="phase2_volume_locked">مغلق</string>
+    <string name="phase2_volume_unlocked">جاهز</string>
+    <string name="phase2_volume_progress">التقدم %1$d%%</string>
+    <string name="phase2_volume_start">ابدأ الدرس</string>
+    <string name="phase2_volume_continue">تابع الدرس</string>
+    <string name="phase2_volume_pick_prompt">اختر مجلدًا مفتوحًا للبدء.</string>
+    <string name="phase2_volume_cta_content_description">ابدأ أو تابع المجلد المحدد</string>
+    <string name="phase2_volume_back_dashboard">العودة إلى الرئيسية</string>
+
+    <!-- المرحلة 2: شاشة الدرس -->
+    <string name="phase2_lesson_back">رجوع</string>
+    <string name="phase2_lesson_title">إقراء %1$d • الدرس %2$d</string>
+    <string name="phase2_lesson_subtitle">استمع ثم كرر واضغط التالي عندما تصبح جاهزًا.</string>
+    <string name="phase2_lesson_progress">الخطوة %1$d من %2$d</string>
+    <string name="phase2_lesson_arabic_card_description">الحرف العربي %1$s، وكتابته الصوتية %2$s</string>
+    <string name="phase2_lesson_instruction">اقرأ ببطء ووضوح.</string>
+    <string name="phase2_letter_alif_transliteration">ألف</string>
+    <string name="phase2_letter_baa_transliteration">باء</string>
+    <string name="phase2_lesson_play">تشغيل النطق</string>
+    <string name="phase2_lesson_record">سجّل صوتي</string>
+    <string name="phase2_lesson_recording">جارٍ التسجيل…</string>
+    <string name="phase2_lesson_next">التالي</string>
+
+    <!-- المرحلة 2: تغذية راجعة من الذكاء الاصطناعي -->
+    <string name="phase2_feedback_overlay_description">تغذية راجعة لنطقك بواسطة الذكاء الاصطناعي</string>
+    <string name="phase2_feedback_title_amazing">تلاوة رائعة!</string>
+    <string name="phase2_feedback_title_keep_trying">محاولة جيدة!</string>
+    <string name="phase2_feedback_message_amazing">ما شاء الله! نطقك واضح وقوي.</string>
+    <string name="phase2_feedback_message_keep_trying">أنت تتحسن. حاول مرة أخرى لتحصل على نتيجة أفضل.</string>
+    <string name="phase2_feedback_score">النتيجة: %1$d%%</string>
+    <string name="phase2_feedback_tips_title">نصائح</string>
+    <string name="phase2_feedback_tip_item">• %1$s</string>
+    <string name="phase2_feedback_try_again">حاول مرة أخرى</string>
+    <string name="phase2_feedback_continue">متابعة</string>
+    <string name="phase2_feedback_tip_pronounce_slowly">انطق كل صوت ببطء.</string>
+    <string name="phase2_feedback_tip_listen_before_repeat">استمع أولًا ثم كرر.</string>
+    <string name="phase2_feedback_tip_hold_mic_closer">قرّب الميكروفون قليلًا.</string>
+    <string name="phase2_feedback_tip_repeat_three_times">كرر الحرف ثلاث مرات.</string>
+
+    <!-- المرحلة 2: الاحتفال بإكمال الدرس -->
+    <string name="phase2_celebration_title">اكتمل الدرس!</string>
+    <string name="phase2_celebration_subtitle">لقد أنهيت %1$s</string>
+    <string name="phase2_celebration_summary_description">تم كسب %1$d نجوم و%2$d نقاط وسلسلة %3$d أيام</string>
+    <string name="phase2_celebration_points">حصلت على %1$d نجوم و%2$d نقاط.</string>
+    <string name="phase2_celebration_streak">سلسلة الأيام: %1$d أيام</string>
+    <string name="phase2_celebration_continue">تابع التعلم</string>
+    <string name="phase2_celebration_go_home">الذهاب إلى الرئيسية</string>
+
+    <!-- المرحلة 2: لوحة الطفل الرئيسية -->
+    <string name="phase2_dashboard_avatar_description">صورة الحساب للطفل %1$s</string>
+    <string name="phase2_dashboard_greeting">السلام عليكم، %1$s!</string>
+    <string name="phase2_dashboard_subtitle">هل أنت مستعد لتعلم اليوم؟</string>
+    <string name="phase2_dashboard_continue_description">تابع إقراء %1$d الدرس %2$d</string>
+    <string name="phase2_dashboard_continue_title">تابع التعلم</string>
+    <string name="phase2_dashboard_continue_subtitle">إقراء %1$d • الدرس %2$d</string>
+    <string name="phase2_dashboard_continue_cta">ابدأ الآن</string>
+    <string name="phase2_dashboard_streak_label">السلسلة</string>
+    <string name="phase2_dashboard_points_label">النقاط</string>
+    <string name="phase2_dashboard_quick_actions">إجراءات سريعة</string>
+    <string name="phase2_dashboard_open_volumes">فتح المجلدات</string>
+    <string name="phase2_dashboard_open_progress">عرض التقدم</string>
+    <string name="phase2_dashboard_completed_volumes">المجلدات المكتملة: %1$d / 6</string>
+</resources>

@@ -1,3 +1,70 @@
 <resources>
     <string name="app_name">IqraAI</string>
+
+    <!-- Phase 2: Volume Selection -->
+    <string name="phase2_volume_title">Choose Your Iqra&apos; Volume</string>
+    <string name="phase2_volume_subtitle">Pick a volume to continue your Quran reading journey.</string>
+    <string name="phase2_volume_title_item">Iqra&apos; %1$d</string>
+    <string name="phase2_volume_locked">Locked</string>
+    <string name="phase2_volume_unlocked">Ready</string>
+    <string name="phase2_volume_progress">Progress %1$d%%</string>
+    <string name="phase2_volume_start">Start Lesson</string>
+    <string name="phase2_volume_continue">Continue Lesson</string>
+    <string name="phase2_volume_pick_prompt">Select an unlocked volume to begin.</string>
+    <string name="phase2_volume_cta_content_description">Start or continue selected volume</string>
+    <string name="phase2_volume_back_dashboard">Back to Home</string>
+
+    <!-- Phase 2: Lesson -->
+    <string name="phase2_lesson_back">Back</string>
+    <string name="phase2_lesson_title">Iqra&apos; %1$d • Lesson %2$d</string>
+    <string name="phase2_lesson_subtitle">Listen, repeat, and tap next when you&apos;re ready.</string>
+    <string name="phase2_lesson_progress">Step %1$d of %2$d</string>
+    <string name="phase2_lesson_arabic_card_description">Arabic letter %1$s, transliteration %2$s</string>
+    <string name="phase2_lesson_instruction">Read slowly and clearly.</string>
+    <string name="phase2_letter_alif_transliteration">Alif</string>
+    <string name="phase2_letter_baa_transliteration">Baa</string>
+    <string name="phase2_lesson_play">Play Pronunciation</string>
+    <string name="phase2_lesson_record">Record My Voice</string>
+    <string name="phase2_lesson_recording">Recording…</string>
+    <string name="phase2_lesson_next">Next</string>
+
+    <!-- Phase 2: AI Feedback -->
+    <string name="phase2_feedback_overlay_description">AI pronunciation feedback</string>
+    <string name="phase2_feedback_title_amazing">Amazing Recitation!</string>
+    <string name="phase2_feedback_title_keep_trying">Good Try!</string>
+    <string name="phase2_feedback_message_amazing">MashaAllah! Your pronunciation sounds strong.</string>
+    <string name="phase2_feedback_message_keep_trying">You are improving. Try again for an even better score.</string>
+    <string name="phase2_feedback_score">Score: %1$d%%</string>
+    <string name="phase2_feedback_tips_title">Tips</string>
+    <string name="phase2_feedback_tip_item">• %1$s</string>
+    <string name="phase2_feedback_try_again">Try Again</string>
+    <string name="phase2_feedback_continue">Continue</string>
+    <string name="phase2_feedback_tip_pronounce_slowly">Pronounce each sound slowly.</string>
+    <string name="phase2_feedback_tip_listen_before_repeat">Listen first, then repeat.</string>
+    <string name="phase2_feedback_tip_hold_mic_closer">Hold the microphone a little closer.</string>
+    <string name="phase2_feedback_tip_repeat_three_times">Repeat the letter three times.</string>
+
+    <!-- Phase 2: Celebration -->
+    <string name="phase2_celebration_title">Lesson Complete!</string>
+    <string name="phase2_celebration_subtitle">You finished %1$s</string>
+    <string name="phase2_celebration_summary_description">%1$d stars earned, %2$d points earned, %3$d day streak</string>
+    <string name="phase2_celebration_points">You earned %1$d stars and %2$d points.</string>
+    <string name="phase2_celebration_streak">Daily streak: %1$d days</string>
+    <string name="phase2_celebration_continue">Continue Learning</string>
+    <string name="phase2_celebration_go_home">Go to Home</string>
+
+    <!-- Phase 2: Home Dashboard -->
+    <string name="phase2_dashboard_avatar_description">Avatar for %1$s</string>
+    <string name="phase2_dashboard_greeting">Assalamualaikum, %1$s!</string>
+    <string name="phase2_dashboard_subtitle">Ready for today&apos;s learning?</string>
+    <string name="phase2_dashboard_continue_description">Continue Iqra&apos; %1$d lesson %2$d</string>
+    <string name="phase2_dashboard_continue_title">Continue Learning</string>
+    <string name="phase2_dashboard_continue_subtitle">Iqra&apos; %1$d • Lesson %2$d</string>
+    <string name="phase2_dashboard_continue_cta">Start Now</string>
+    <string name="phase2_dashboard_streak_label">Streak</string>
+    <string name="phase2_dashboard_points_label">Points</string>
+    <string name="phase2_dashboard_quick_actions">Quick Actions</string>
+    <string name="phase2_dashboard_open_volumes">Open Volumes</string>
+    <string name="phase2_dashboard_open_progress">View Progress</string>
+    <string name="phase2_dashboard_completed_volumes">Completed volumes: %1$d / 6</string>
 </resources>
