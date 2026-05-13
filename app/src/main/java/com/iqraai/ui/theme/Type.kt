@@ -6,10 +6,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// In a real app we would load Nunito and KFGQPC Uthmanic Naskh via Downloadable Fonts or raw assets
-// val Nunito = FontFamily(Font(R.font.nunito))
-// val UthmanicNaskh = FontFamily(Font(R.font.uthmanic_naskh))
-
 // Using default for prototype, but mimicking scales
 val Typography = Typography(
     displayLarge = TextStyle(
