@@ -42,7 +42,7 @@ import com.iqraai.ui.theme.Charcoal
 import com.iqraai.ui.theme.DeepTeal
 import com.iqraai.ui.theme.OffWhite
 import com.iqraai.ui.theme.WarmGray
-import com.iqraai.ui.theme.TealLight
+import com.iqraai.ui.theme.DeepTealLight
 import com.iqraai.ui.theme.Rose
 import com.iqraai.ui.theme.Sage
 
@@ -54,7 +54,7 @@ fun ChildProfileCreationScreen(
     var name by remember { mutableStateOf("") }
     var selectedAge by remember { mutableStateOf<Int?>(null) }
 
-    val avatarColors = listOf(DeepTeal, Amber, Sage, Rose, TealLight, WarmGray)
+    val avatarColors = listOf(DeepTeal, Amber, Sage, Rose, DeepTealLight, WarmGray)
     var selectedAvatarColor by remember { mutableStateOf(avatarColors[0]) }
 
     val isContinueEnabled = name.isNotBlank() && selectedAge != null
