@@ -31,19 +31,19 @@ import com.iqraai.ui.components.buttons.GhostButton
 import com.iqraai.ui.theme.Amber
 import com.iqraai.ui.theme.OffWhite
 
+private val ONBOARDING_STEPS = listOf(
+    "This is the letter Alif. Touch it to hear the sound!",
+    "Press this to hear how to say it.",
+    "Now you try! Press and say 'Aaaah'",
+    "See your progress here. Keep going!"
+)
+
 @Composable
 fun FirstLessonPreviewScreen(
     onSkip: () -> Unit,
     onComplete: () -> Unit
 ) {
     var currentStep by remember { mutableIntStateOf(0) }
-
-    val steps = listOf(
-        "This is the letter Alif. Touch it to hear the sound!",
-        "Press this to hear how to say it.",
-        "Now you try! Press and say 'Aaaah'",
-        "See your progress here. Keep going!"
-    )
 
     Box(modifier = Modifier.fillMaxSize()) {
         // Mock Lesson Background (Dimmed)
@@ -76,7 +76,7 @@ fun FirstLessonPreviewScreen(
                     .clip(CircleShape)
                     .background(Color.Transparent)
                     .clickable {
-                        if (currentStep < steps.size - 1) {
+                        if (currentStep < ONBOARDING_STEPS.size - 1) {
                             currentStep++
                         } else {
                             onComplete()
@@ -95,7 +95,7 @@ fun FirstLessonPreviewScreen(
                 enter = fadeIn(tween(300)) + slideInVertically(tween(300)) { it / 2 }
             ) {
                 Text(
-                    text = steps[currentStep],
+                    text = ONBOARDING_STEPS[currentStep],
                     style = MaterialTheme.typography.bodyLarge,
                     color = OffWhite,
                     textAlign = androidx.compose.ui.text.style.TextAlign.Center
@@ -105,7 +105,7 @@ fun FirstLessonPreviewScreen(
 
         // Navigation Dots
         RowNavigationDots(
-            count = steps.size,
+            count = ONBOARDING_STEPS.size,
             currentIndex = currentStep,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
