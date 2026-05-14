@@ -1,16 +1,16 @@
 package com.iqraai.ui.screens.settings
 
+import androidx.compose.material.icons.Icons
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.ExitToApp
+import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.automirrored.filled.ExitToApp
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Place
 import androidx.compose.material.icons.filled.Lock
@@ -98,7 +98,7 @@ fun SettingsScreen(
             }
             item {
                 SettingsListItem(
-                    icon = Icons.Default.ExitToApp,
+                    icon = Icons.AutoMirrored.Filled.ExitToApp,
                     title = stringResource(R.string.settings_item_logout),
                     titleColor = MaterialTheme.colorScheme.error,
                     iconColor = MaterialTheme.colorScheme.error,
@@ -180,7 +180,7 @@ fun SettingsScreen(
             }
             item {
                 SettingsListItem(
-                    icon = Icons.Default.List,
+                    icon = Icons.AutoMirrored.Filled.List,
                     title = stringResource(R.string.settings_item_terms_of_service),
                     onClick = { /* Open Terms of Service */ }
                 )

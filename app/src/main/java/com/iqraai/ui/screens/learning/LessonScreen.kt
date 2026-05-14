@@ -107,7 +107,7 @@ fun LessonScreen(
             Spacer(modifier = Modifier.height(24.dp))
 
             LinearProgressIndicator(
-                progress = state.currentStep.toFloat() / state.totalSteps.coerceAtLeast(1),
+                progress = { state.currentStep.toFloat() / state.totalSteps.coerceAtLeast(1) },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(10.dp)
