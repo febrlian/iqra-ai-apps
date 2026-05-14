@@ -25,7 +25,7 @@
 - [x] Generate & Translate Screen 12: Settings Screen.
 
 ## Phase 5: Architecture & Data Integration
-- [ ] Setup Room Database (Entities: `IqraVolumeEntity`, `LessonEntity`, `RecitationAttemptEntity`, `ChildProfileEntity`, `SRSItemEntity`).
-- [ ] Implement MVI StateFlow-based ViewModels.
-- [ ] Compose NavHost integration.
-- [ ] Hilt Dependency Injection setup.
+- [x] Setup Room Database (Entities: `IqraVolumeEntity`, `LessonEntity`, `RecitationAttemptEntity`, `ChildProfileEntity`, `SRSItemEntity`).
+- [x] Implement MVI StateFlow-based ViewModels.
+- [x] Compose NavHost integration.
+- [x] Hilt Dependency Injection setup.
