@@ -18,8 +18,8 @@
 - [x] Generate & Translate Screen 9: Home Dashboard (Child View).
 
 ## Phase 3: Parent Dashboard
-- [ ] Generate & Translate Screen 10: Parent Overview Dashboard.
-- [ ] Generate & Translate Screen 11: Progress Detail Screen.
+- [x] Generate & Translate Screen 10: Parent Overview Dashboard.
+- [x] Generate & Translate Screen 11: Progress Detail Screen.
 
 ## Phase 4: Settings & Utility
 - [ ] Generate & Translate Screen 12: Settings Screen.
