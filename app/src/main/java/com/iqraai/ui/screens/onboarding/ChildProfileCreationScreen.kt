@@ -47,6 +47,8 @@ import com.iqraai.ui.theme.DeepTealLight
 import com.iqraai.ui.theme.Rose
 import com.iqraai.ui.theme.Sage
 
+
+private val AVATAR_COLORS = listOf(DeepTeal, Amber, Sage, Rose, DeepTealLight, WarmGray)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ChildProfileCreationScreen(
@@ -55,8 +57,8 @@ fun ChildProfileCreationScreen(
     var name by remember { mutableStateOf("") }
     var selectedAge by remember { mutableStateOf<Int?>(null) }
 
-    val avatarColors = listOf(DeepTeal, Amber, Sage, Rose, DeepTealLight, WarmGray)
-    var selectedAvatarColor by remember { mutableStateOf(avatarColors[0]) }
+
+    var selectedAvatarColor by remember { mutableStateOf(AVATAR_COLORS[0]) }
 
     val isContinueEnabled = name.isNotBlank() && selectedAge != null
 
@@ -133,7 +135,7 @@ fun ChildProfileCreationScreen(
             Row(
                 modifier = Modifier.horizontalScroll(rememberScrollState())
             ) {
-                avatarColors.forEach { color ->
+                AVATAR_COLORS.forEach { color ->
                     AvatarSelector(
                         color = color,
                         isSelected = color == selectedAvatarColor,
