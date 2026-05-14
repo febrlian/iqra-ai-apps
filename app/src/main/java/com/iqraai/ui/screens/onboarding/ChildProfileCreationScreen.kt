@@ -24,6 +24,7 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -90,7 +91,7 @@ fun ChildProfileCreationScreen(
                 modifier = Modifier.fillMaxWidth(),
                 placeholder = { Text("e.g., Aisyah, Ahmad", color = WarmGray) },
                 shape = RoundedCornerShape(12.dp),
-                colors = TextFieldDefaults.outlinedTextFieldColors(
+                colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = DeepTeal,
                     unfocusedBorderColor = WarmGray.copy(alpha = 0.5f),
                     cursorColor = DeepTeal

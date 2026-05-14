@@ -53,7 +53,6 @@ fun ParentGateScreen(
     val num2 = 7
     val expectedAnswer = (num1 + num2).toString()
 
-    val isError = attempts > 0 && input.isNotEmpty() && input != expectedAnswer && input.length == expectedAnswer.length
 
     if (input.length == expectedAnswer.length) {
         if (input == expectedAnswer) {

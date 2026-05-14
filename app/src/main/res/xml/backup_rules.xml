@@ -2,5 +2,4 @@
 <full-backup-content xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Do not backup audio recordings or temporary files -->
     <exclude domain="file" path="recordings"/>
-    <exclude domain="cache" path="."/>
 </full-backup-content>

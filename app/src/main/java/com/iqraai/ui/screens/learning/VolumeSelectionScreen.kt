@@ -198,7 +198,7 @@ private fun VolumeCard(
 
             Column {
                 LinearProgressIndicator(
-                    progress = volume.progress.coerceIn(0f, 1f),
+                    progress = { volume.progress.coerceIn(0f, 1f) },
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(8.dp)
