@@ -4,9 +4,7 @@
 
     <application
         android:name=".IqraApplication"
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
+        android:allowBackup="false"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.IqraAI"
