@@ -1,11 +1,10 @@
 package com.iqraai.ui.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.iqraai.ui.viewmodel.AppIntent
+import com.iqraai.ui.viewmodel.AppViewModel
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -46,20 +45,10 @@ object AppRoutes {
 
 @Composable
 fun IqraAppNavHost(
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
+    viewModel: AppViewModel = hiltViewModel()
 ) {
-    var childName by remember { mutableStateOf("Aisyah") }
-    var avatarColor by remember { mutableStateOf(DeepTeal) }
-
-    var selectedVolume by remember { mutableIntStateOf(1) }
-    var currentLesson by remember { mutableIntStateOf(1) }
-    var lessonStep by remember { mutableIntStateOf(1) }
-    val totalLessonSteps = 5
-    var feedbackScore by remember { mutableIntStateOf(88) }
-    var streakDays by remember { mutableIntStateOf(4) }
-    var points by remember { mutableIntStateOf(120) }
-    var completedVolumes by remember { mutableIntStateOf(1) }
-    var isRecording by remember { mutableStateOf(false) }
+    val state = viewModel.state.collectAsStateWithLifecycle().value
 
     NavHost(
         navController = navController,
@@ -75,8 +64,7 @@ fun IqraAppNavHost(
         composable(AppRoutes.ChildProfile) {
             ChildProfileCreationScreen(
                 onContinueClick = { name, _, color ->
-                    childName = name
-                    avatarColor = color
+                    viewModel.handleIntent(AppIntent.UpdateChildProfile(name, color.value.toInt()))
                     navController.navigate(AppRoutes.ParentGate)
                 }
             )
@@ -97,22 +85,32 @@ fun IqraAppNavHost(
 
         composable(AppRoutes.FirstPreview) {
             FirstLessonPreviewScreen(
-                onSkip = { navController.navigate(AppRoutes.VolumeSelection) },
-                onComplete = { navController.navigate(AppRoutes.VolumeSelection) }
+                onSkip = {
+                    viewModel.handleIntent(AppIntent.CompleteFirstPreview)
+                    navController.navigate(AppRoutes.VolumeSelection)
+                },
+                onComplete = {
+                    viewModel.handleIntent(AppIntent.CompleteFirstPreview)
+                    navController.navigate(AppRoutes.VolumeSelection)
+                }
             )
         }
 
         composable(AppRoutes.VolumeSelection) {
             VolumeSelectionScreen(
                 state = VolumeSelectionUiState(
-                    volumes = buildMockVolumes(selectedVolume),
-                    selectedVolume = selectedVolume
+                    volumes = state.volumes.map { vol ->
+                        IqraVolumeUiModel(
+                            number = vol.volumeNumber,
+                            progress = vol.progress,
+                            isLocked = vol.isLocked
+                        )
+                    },
+                    selectedVolume = state.selectedVolume
                 ),
-                onVolumeSelected = { selectedVolume = it },
+                onVolumeSelected = { viewModel.handleIntent(AppIntent.SelectVolume(it)) },
                 onStartOrContinueClick = { chosenVolume ->
-                    selectedVolume = chosenVolume
-                    currentLesson = 1
-                    lessonStep = 1
+                    viewModel.handleIntent(AppIntent.StartLesson(chosenVolume, 1))
                     navController.navigate(AppRoutes.Lesson)
                 },
                 onBackToDashboard = { navController.navigate(AppRoutes.Home) }
@@ -122,29 +120,28 @@ fun IqraAppNavHost(
         composable(AppRoutes.Lesson) {
             LessonScreen(
                 state = LessonUiState(
-                    volumeNumber = selectedVolume,
-                    lessonNumber = currentLesson,
-                    arabicText = if (selectedVolume % 2 == 0) "ب" else "ا",
-                    transliteration = if (selectedVolume % 2 == 0) {
+                    volumeNumber = state.selectedVolume,
+                    lessonNumber = state.currentLessonNumber,
+                    arabicText = if (state.selectedVolume % 2 == 0) "ب" else "ا",
+                    transliteration = if (state.selectedVolume % 2 == 0) {
                         stringResource(R.string.phase2_letter_baa_transliteration)
                     } else {
                         stringResource(R.string.phase2_letter_alif_transliteration)
                     },
-                    currentStep = lessonStep,
-                    totalSteps = totalLessonSteps,
-                    isRecording = isRecording
+                    currentStep = state.currentLessonStep,
+                    totalSteps = state.totalLessonSteps,
+                    isRecording = state.isRecording
                 ),
                 onBack = { navController.popBackStack() },
-                onPlayPronunciation = { isRecording = false },
+                onPlayPronunciation = { if(state.isRecording) viewModel.handleIntent(AppIntent.ToggleRecording) },
                 onRecordTry = {
-                    isRecording = !isRecording
+                    viewModel.handleIntent(AppIntent.ToggleRecording)
                 },
                 onNext = {
-                    if (lessonStep < totalLessonSteps) {
-                        lessonStep += 1
+                    if (state.currentLessonStep < state.totalLessonSteps) {
+                        viewModel.handleIntent(AppIntent.NextLessonStep)
                     } else {
-                        feedbackScore = if (selectedVolume <= 2) 90 else 72
-                        isRecording = false
+                        viewModel.handleIntent(AppIntent.StopRecordingAndEvaluate)
                         navController.navigate(AppRoutes.Feedback)
                     }
                 }
@@ -154,8 +151,8 @@ fun IqraAppNavHost(
         composable(AppRoutes.Feedback) {
             AiFeedbackOverlayScreen(
                 state = AiFeedbackUiState(
-                    score = feedbackScore,
-                    tips = if (feedbackScore >= 80) {
+                    score = state.feedbackScore,
+                    tips = if (state.feedbackScore >= 80) {
                         listOf(
                             stringResource(R.string.phase2_feedback_tip_pronounce_slowly),
                             stringResource(R.string.phase2_feedback_tip_listen_before_repeat)
@@ -168,12 +165,11 @@ fun IqraAppNavHost(
                     }
                 ),
                 onTryAgain = {
-                    lessonStep = (lessonStep - 1).coerceAtLeast(1)
+                    viewModel.handleIntent(AppIntent.RetryLessonStep)
                     navController.popBackStack()
                 },
                 onContinue = {
-                    points += if (feedbackScore >= 80) 100 else 60
-                    streakDays += 1
+                    viewModel.handleIntent(AppIntent.ContinueAfterFeedback)
                     navController.navigate(AppRoutes.Celebration)
                 }
             )
@@ -182,19 +178,17 @@ fun IqraAppNavHost(
         composable(AppRoutes.Celebration) {
             LessonCompleteCelebrationScreen(
                 state = CelebrationUiState(
-                    starsEarned = if (feedbackScore >= 80) 3 else 2,
-                    pointsEarned = if (feedbackScore >= 80) 100 else 60,
-                    streakDays = streakDays,
+                    starsEarned = if (state.feedbackScore >= 80) 3 else 2,
+                    pointsEarned = if (state.feedbackScore >= 80) 100 else 60,
+                    streakDays = state.childProfile?.streakDays ?: 0,
                     completedLessonLabel = stringResource(
                         R.string.phase2_lesson_title,
-                        selectedVolume,
-                        currentLesson
+                        state.selectedVolume,
+                        state.currentLessonNumber
                     )
                 ),
                 onContinue = {
-                    if (selectedVolume > completedVolumes) {
-                        completedVolumes = selectedVolume
-                    }
+                    viewModel.handleIntent(AppIntent.ContinueAfterCelebration)
                     navController.navigate(AppRoutes.Home) {
                         popUpTo(AppRoutes.VolumeSelection) { inclusive = false }
                     }
@@ -227,16 +221,16 @@ fun IqraAppNavHost(
         composable(AppRoutes.Home) {
             HomeDashboardScreen(
                 state = HomeDashboardUiState(
-                    childName = childName,
-                    avatarColor = avatarColor,
-                    currentVolume = selectedVolume,
-                    currentLesson = currentLesson,
-                    streakDays = streakDays,
-                    points = points,
-                    completedVolumes = completedVolumes
+                    childName = state.childProfile?.name ?: "Aisyah",
+                    avatarColor = androidx.compose.ui.graphics.Color(state.childProfile?.avatarColorArgb ?: DeepTeal.value.toInt()),
+                    currentVolume = state.selectedVolume,
+                    currentLesson = state.currentLessonNumber,
+                    streakDays = state.childProfile?.streakDays ?: 0,
+                    points = state.childProfile?.points ?: 0,
+                    completedVolumes = state.childProfile?.completedVolumes ?: 0
                 ),
                 onContinueLearning = {
-                    lessonStep = 1
+                    viewModel.handleIntent(AppIntent.StartLesson(state.selectedVolume, state.currentLessonNumber))
                     navController.navigate(AppRoutes.Lesson)
                 },
                 onOpenVolumes = { navController.navigate(AppRoutes.VolumeSelection) },
@@ -246,14 +240,3 @@ fun IqraAppNavHost(
     }
 }
 
-private fun buildMockVolumes(selectedVolume: Int): List<IqraVolumeUiModel> {
-    val progressMap = listOf(1f, 0.52f, 0.2f, 0f, 0f, 0f)
-    return progressMap.mapIndexed { index, progress ->
-        val volumeNumber = index + 1
-        IqraVolumeUiModel(
-            number = volumeNumber,
-            progress = progress,
-            isLocked = volumeNumber > 3 && volumeNumber != selectedVolume
-        )
-    }
-}
