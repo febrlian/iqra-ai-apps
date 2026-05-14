@@ -2,9 +2,9 @@
     <string name="app_name">IqraAI</string>
 
     <!-- Phase 2: Volume Selection -->
-    <string name="phase2_volume_title">Choose Your Iqra&apos; Volume</string>
+    <string name="phase2_volume_title">Choose Your Iqra\' Volume</string>
     <string name="phase2_volume_subtitle">Pick a volume to continue your Quran reading journey.</string>
-    <string name="phase2_volume_title_item">Iqra&apos; %1$d</string>
+    <string name="phase2_volume_title_item">Iqra\' %1$d</string>
     <string name="phase2_volume_locked">Locked</string>
     <string name="phase2_volume_unlocked">Ready</string>
     <string name="phase2_volume_progress">Progress %1$d%%</string>
@@ -16,8 +16,8 @@
 
     <!-- Phase 2: Lesson -->
     <string name="phase2_lesson_back">Back</string>
-    <string name="phase2_lesson_title">Iqra&apos; %1$d • Lesson %2$d</string>
-    <string name="phase2_lesson_subtitle">Listen, repeat, and tap next when you&apos;re ready.</string>
+    <string name="phase2_lesson_title">Iqra\' %1$d • Lesson %2$d</string>
+    <string name="phase2_lesson_subtitle">Listen, repeat, and tap next when you\'re ready.</string>
     <string name="phase2_lesson_progress">Step %1$d of %2$d</string>
     <string name="phase2_lesson_arabic_card_description">Arabic letter %1$s, transliteration %2$s</string>
     <string name="phase2_lesson_instruction">Read slowly and clearly.</string>
@@ -56,10 +56,10 @@
     <!-- Phase 2: Home Dashboard -->
     <string name="phase2_dashboard_avatar_description">Avatar for %1$s</string>
     <string name="phase2_dashboard_greeting">Assalamualaikum, %1$s!</string>
-    <string name="phase2_dashboard_subtitle">Ready for today&apos;s learning?</string>
-    <string name="phase2_dashboard_continue_description">Continue Iqra&apos; %1$d lesson %2$d</string>
+    <string name="phase2_dashboard_subtitle">Ready for today\'s learning?</string>
+    <string name="phase2_dashboard_continue_description">Continue Iqra\' %1$d lesson %2$d</string>
     <string name="phase2_dashboard_continue_title">Continue Learning</string>
-    <string name="phase2_dashboard_continue_subtitle">Iqra&apos; %1$d • Lesson %2$d</string>
+    <string name="phase2_dashboard_continue_subtitle">Iqra\' %1$d • Lesson %2$d</string>
     <string name="phase2_dashboard_continue_cta">Start Now</string>
     <string name="phase2_dashboard_streak_label">Streak</string>
     <string name="phase2_dashboard_points_label">Points</string>
