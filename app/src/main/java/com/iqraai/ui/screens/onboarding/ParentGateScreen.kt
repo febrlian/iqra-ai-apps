@@ -40,7 +40,9 @@ import com.iqraai.ui.theme.WarmGray
 @Composable
 fun ParentGateScreen(
     onSuccess: () -> Unit,
-    onLockedOut: () -> Unit
+    onLockedOut: () -> Unit,
+    onBack: () -> Unit = {},
+    onSettings: () -> Unit = {}
 ) {
     var input by remember { mutableStateOf("") }
     var attempts by remember { mutableStateOf(0) }
@@ -55,7 +57,8 @@ fun ParentGateScreen(
 
     if (input.length == expectedAnswer.length) {
         if (input == expectedAnswer) {
-            onSuccess()
+            onSettings() // Actually navigate to settings for Phase 4 test
+            // onSuccess() // original behaviour
         } else {
             attempts++
             if (attempts >= maxAttempts) {

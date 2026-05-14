@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Phase 4: Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_back_content_desc">Back</string>
+
+    <!-- Sections -->
+    <string name="settings_section_account">Account</string>
+    <string name="settings_section_preferences">App Preferences</string>
+    <string name="settings_section_audio">Audio Options</string>
+    <string name="settings_section_about">About</string>
+
+    <!-- Items -->
+    <string name="settings_item_edit_profile">Edit Profile</string>
+    <string name="settings_item_change_pin">Change PIN</string>
+    <string name="settings_item_logout">Logout</string>
+
+    <string name="settings_item_language">Language</string>
+    <string name="settings_item_notifications">Notifications</string>
+    <string name="settings_item_dark_mode">Dark Mode</string>
+
+    <string name="settings_item_reciter_voice">Reciter Voice</string>
+    <string name="settings_item_playback_speed">Playback Speed</string>
+
+    <string name="settings_item_privacy_policy">Privacy Policy</string>
+    <string name="settings_item_terms_of_service">Terms of Service</string>
+    <string name="settings_item_app_version">App Version</string>
+</resources>

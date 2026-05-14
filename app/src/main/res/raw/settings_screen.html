@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Iqra' AI - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#6f3814",
+                    "on-surface": "#191c1c",
+                    "outline-variant": "#bec8c8",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#643f00",
+                    "tertiary": "#5e2a07",
+                    "surface-variant": "#e1e3e2",
+                    "secondary-fixed": "#ffddb5",
+                    "primary-fixed-dim": "#8ed2d5",
+                    "charcoal": "#3E2723",
+                    "primary-fixed": "#aaeef1",
+                    "tertiary-fixed-dim": "#ffb68e",
+                    "teal-dark": "#0A5C5F",
+                    "surface-dim": "#d8dada",
+                    "warm-gray": "#8D7B68",
+                    "on-primary-fixed-variant": "#004f52",
+                    "tertiary-fixed": "#ffdbca",
+                    "background": "#f8faf9",
+                    "sage": "#7CB342",
+                    "amber-light": "#FFD54F",
+                    "surface-container": "#ebeeee",
+                    "on-secondary-container": "#764b00",
+                    "on-secondary-fixed": "#2a1800",
+                    "surface-container-high": "#e6e9e8",
+                    "surface-bright": "#f8faf9",
+                    "error-container": "#ffdad6",
+                    "rose": "#E57373",
+                    "teal-light": "#14A098",
+                    "amber-dark": "#F57F17",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#331200",
+                    "on-surface-variant": "#3f4949",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f2f4f3",
+                    "on-error-container": "#93000a",
+                    "inverse-on-surface": "#eff1f1",
+                    "primary-container": "#00595c",
+                    "inverse-primary": "#8ed2d5",
+                    "primary": "#004042",
+                    "on-background": "#191c1c",
+                    "outline": "#6e7979",
+                    "on-primary-fixed": "#002021",
+                    "on-primary-container": "#89cdd0",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#1d686b",
+                    "tertiary-container": "#7a401c",
+                    "surface-container-highest": "#e1e3e2",
+                    "inverse-surface": "#2e3131",
+                    "on-tertiary-container": "#ffaf83",
+                    "on-error": "#ffffff",
+                    "cream": "#FFF8E1",
+                    "secondary": "#835400",
+                    "secondary-fixed-dim": "#fabb65",
+                    "secondary-container": "#fdbd67",
+                    "surface": "#f7fafa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "2xl": "48px",
+                    "sm": "8px",
+                    "3xl": "64px",
+                    "4xl": "96px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "base": "8px",
+                    "xl": "32px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "micro": ["Nunito"],
+                    "hero": ["Nunito"],
+                    "arabic-body": ["KFGQPC Uthmanic Naskh"],
+                    "h3": ["Nunito"],
+                    "caption": ["Nunito"],
+                    "h1": ["Nunito"],
+                    "body-lg": ["Nunito"],
+                    "body": ["Nunito"],
+                    "arabic-display": ["KFGQPC Uthmanic Naskh"],
+                    "h2": ["Nunito"]
+            },
+            "fontSize": {
+                    "micro": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "hero": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.5px", "fontWeight": "800"}],
+                    "arabic-body": ["22px", {"lineHeight": "32px", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "caption": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "h1": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.3px", "fontWeight": "700"}],
+                    "body-lg": ["22px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "body": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "arabic-display": ["48px", {"lineHeight": "64px", "fontWeight": "700"}],
+                    "h2": ["24px", {"lineHeight": "32px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f8faf9;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased pb-2xl">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-50 bg-surface-bright dark:bg-inverse-surface flex justify-between items-center px-lg py-md w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-md">
+<button class="active:scale-95 transition-transform hover:bg-surface-container-high p-xs rounded-full">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-h2 text-h2 text-primary dark:text-primary-fixed-dim">Settings</h1>
+</div>
+<div class="w-lg"></div> <!-- Spacer for balance -->
+</header>
+<main class="max-w-md mx-auto px-md mt-md">
+<!-- Account Section -->
+<section class="mb-xl">
+<h2 class="font-h3 text-h3 text-on-surface-variant px-sm mb-sm">Account</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container transition-colors border-b border-outline-variant active:scale-[0.98]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+<span class="font-body text-body">Edit Profile</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container transition-colors border-b border-outline-variant active:scale-[0.98]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="lock">lock</span>
+<span class="font-body text-body">Change PIN</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md hover:bg-error-container transition-colors active:scale-[0.98]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-error" data-icon="logout">logout</span>
+<span class="font-body text-body text-error">Logout</span>
+</div>
+</button>
+</div>
+</section>
+<!-- App Preferences Section -->
+<section class="mb-xl">
+<h2 class="font-h3 text-h3 text-on-surface-variant px-sm mb-sm">App Preferences</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container transition-colors border-b border-outline-variant active:scale-[0.98]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="language">language</span>
+<span class="font-body text-body">Language</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-caption text-caption text-on-surface-variant">English</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+<div class="w-full flex items-center justify-between p-md border-b border-outline-variant">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<span class="font-body text-body">Notifications</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+<div class="w-full flex items-center justify-between p-md">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="dark_mode">dark_mode</span>
+<span class="font-body text-body">Dark Mode</span>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-high peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Audio Options Section -->
+<section class="mb-xl">
+<h2 class="font-h3 text-h3 text-on-surface-variant px-sm mb-sm">Audio Options</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container transition-colors border-b border-outline-variant active:scale-[0.98]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="mic">mic</span>
+<span class="font-body text-body">Reciter Voice</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-caption text-caption text-on-surface-variant">Mishary Al-Afasy</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container transition-colors active:scale-[0.98]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="speed">speed</span>
+<span class="font-body text-body">Playback Speed</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="font-caption text-caption text-on-surface-variant">Normal</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</button>
+</div>
+</section>
+<!-- About Section -->
+<section class="mb-2xl">
+<h2 class="font-h3 text-h3 text-on-surface-variant px-sm mb-sm">About</h2>
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden">
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container transition-colors border-b border-outline-variant active:scale-[0.98]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="policy">policy</span>
+<span class="font-body text-body">Privacy Policy</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full flex items-center justify-between p-md hover:bg-surface-container transition-colors border-b border-outline-variant active:scale-[0.98]">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+<span class="font-body text-body">Terms of Service</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="w-full flex items-center justify-between p-md">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<span class="font-body text-body">App Version</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">v1.0.0</span>
+</div>
+</div>
+</section>
+<!-- Brand Footer -->
+<div class="text-center py-md">
+<div class="flex items-center justify-center gap-sm opacity-60 grayscale mb-xs">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[18px]" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<span class="font-h3 text-h3 text-primary">Iqra' AI</span>
+</div>
+<p class="font-micro text-micro text-on-surface-variant italic">Refining the Journey of Knowledge</p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-md pb-md pt-sm bg-surface-container-lowest dark:bg-surface-container-high border-t border-outline-variant">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-lg py-xs hover:bg-surface-container dark:hover:bg-surface-variant active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-caption text-caption">Overview</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-lg py-xs hover:bg-surface-container dark:hover:bg-surface-variant active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-caption text-caption">Lessons</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-lg py-xs hover:bg-surface-container dark:hover:bg-surface-variant active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="local_activity">local_activity</span>
+<span class="font-caption text-caption">Activity</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container dark:bg-tertiary-container text-on-secondary-container dark:text-on-tertiary-container rounded-full px-lg py-xs active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="settings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-caption text-caption">Settings</span>
+</button>
+</nav>
+</body></html>

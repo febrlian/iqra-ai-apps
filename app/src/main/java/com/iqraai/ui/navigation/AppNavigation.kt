@@ -27,6 +27,8 @@ import com.iqraai.ui.screens.onboarding.ChildProfileCreationScreen
 import com.iqraai.ui.screens.onboarding.FirstLessonPreviewScreen
 import com.iqraai.ui.screens.onboarding.ParentGateScreen
 import com.iqraai.ui.screens.onboarding.WelcomeScreen
+import com.iqraai.ui.screens.settings.SettingsScreen
+import com.iqraai.ui.screens.settings.SettingsUiState
 import com.iqraai.ui.theme.DeepTeal
 
 object AppRoutes {
@@ -39,6 +41,7 @@ object AppRoutes {
     const val Feedback = "feedback"
     const val Celebration = "celebration"
     const val Home = "home"
+    const val Settings = "settings"
 }
 
 @Composable
@@ -81,6 +84,8 @@ fun IqraAppNavHost(
 
         composable(AppRoutes.ParentGate) {
             ParentGateScreen(
+                onBack = { navController.popBackStack() },
+                onSettings = { navController.navigate(AppRoutes.Settings) },
                 onSuccess = { navController.navigate(AppRoutes.FirstPreview) },
                 onLockedOut = {
                     navController.navigate(AppRoutes.Welcome) {
@@ -199,6 +204,23 @@ fun IqraAppNavHost(
                         popUpTo(AppRoutes.VolumeSelection) { inclusive = false }
                     }
                 }
+            )
+        }
+
+
+        composable(AppRoutes.Settings) {
+            SettingsScreen(
+                state = SettingsUiState(),
+                onBack = { navController.popBackStack() },
+                onEditProfile = { /* TODO */ },
+                onChangePin = { /* TODO */ },
+                onLogout = {
+                    navController.navigate(AppRoutes.Welcome) {
+                        popUpTo(AppRoutes.Welcome) { inclusive = true }
+                    }
+                },
+                onToggleNotifications = { /* TODO */ },
+                onToggleDarkMode = { /* TODO */ }
             )
         }
 

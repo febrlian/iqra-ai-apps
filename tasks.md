@@ -22,7 +22,7 @@
 - [x] Generate & Translate Screen 11: Progress Detail Screen.
 
 ## Phase 4: Settings & Utility
-- [ ] Generate & Translate Screen 12: Settings Screen.
+- [x] Generate & Translate Screen 12: Settings Screen.
 
 ## Phase 5: Architecture & Data Integration
 - [ ] Setup Room Database (Entities: `IqraVolumeEntity`, `LessonEntity`, `RecitationAttemptEntity`, `ChildProfileEntity`, `SRSItemEntity`).
